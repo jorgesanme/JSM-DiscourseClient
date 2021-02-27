@@ -15,4 +15,5 @@ enum Constants {
     static let urlGetTopic: String = "https://mdiscourse.keepcoding.io/t/1021.json"
     static let urlUpdateTopic: String = "https://mdiscourse.keepcoding.io/t/-/1021.json"
     static let apiKey: String = "699667f923e65fac39b632b0d9b2db0d9ee40f9da15480ad5a4bcb3c1b095b7a"
+    static let userName: String = "Jorge_S_Medina"
 }

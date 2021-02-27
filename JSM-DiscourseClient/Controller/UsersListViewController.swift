@@ -11,20 +11,21 @@ class UsersListViewController: UIViewController{
     
     @IBOutlet weak var tableViewUser: UITableView!
     
-    //cuando funcione le pongo nombre en ingles
-    var listaUsuarios = user?.self
+    
+    var userList: UserModel? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewUser.register(UINib(nibName: "topicsCell", bundle: nil), forCellReuseIdentifier: "topicsCell")
         tableViewUser.dataSource = self
+        
         fetchUser { [weak self] result in
             switch result {
                 case.success(let userDecoded):
-                    guard let users = userDecoded.directoryItems.map({ directoryItem  in
-                        return directoryItem
-                    })else {return}
-                    //self?.listaUsuarios = users
+                    
+                    self?.userList = userDecoded
                     self?.tableViewUser.reloadData()
+                    
+                    print(self?.userList?.directoryItems[0].user.name)
                 case.failure(let error):
                     print(error)
             }
@@ -33,7 +34,7 @@ class UsersListViewController: UIViewController{
         
     }
     
-    private func fetchUser(completion: @escaping (Result<user,Error>) -> Void){
+    private func fetchUser(completion: @escaping (Result<UserModel,Error>) -> Void){
         guard let url: URL = URL(string: Constants.urlUser) else {return}
         let session: URLSession = URLSession(configuration: .default)
         let fetchTopicRequest: URLRequest = .init(url: url)
@@ -61,7 +62,7 @@ class UsersListViewController: UIViewController{
             }
             
             do {
-                let userDecoded = try JSONDecoder().decode(user.self, from: data)
+                let userDecoded = try JSONDecoder().decode(UserModel.self, from: data)
                 DispatchQueue.main.async {
                     completion(.success(userDecoded))
                 }
@@ -81,18 +82,15 @@ class UsersListViewController: UIViewController{
 extension UsersListViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1//listaUsuarios. 1
+        return userList?.directoryItems.count ?? 1
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "topicsCell", for: indexPath)
         
-            //cell.textLabel?.text =  listaUsuarios.directoryItems?[indexPath.row].user?.username
-        
-            cell.textLabel?.text = " unser no encontrado"
-       
-       
+        cell.textLabel?.text =  userList?.directoryItems[indexPath.row].user.name
+            
         return cell
     }
     

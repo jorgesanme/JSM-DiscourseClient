@@ -10,6 +10,7 @@ import UIKit
 class CategoriesListViewController: UIViewController{
     
     @IBOutlet weak var tableViewCategories: UITableView!
+   
     var categorieslist: Category?
     
     override func viewDidLoad() {
@@ -22,9 +23,9 @@ class CategoriesListViewController: UIViewController{
             switch result{
                 case.success(let category):
                     
-                    self.categorieslist? =  category
-
+                    self.categorieslist =  category
                     self.tableViewCategories.reloadData()
+                    print (self.categorieslist?.categoryList.categories[0].name)
                 case.failure(let error):
                     print(error)
             }
@@ -78,12 +79,13 @@ class CategoriesListViewController: UIViewController{
 extension CategoriesListViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categorieslist?.categoryList?.categories?.count ?? 10
+        return categorieslist?.categoryList.categories.count ?? 0
+
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "topicsCell", for: indexPath)
         
-        cell.textLabel?.text = categorieslist?.categoryList?.categories?[indexPath.row].name //"pp10"//categorieslist?.lista?.categories?[indexPath.row].name
+        cell.textLabel?.text = categorieslist?.categoryList.categories[indexPath.row].name
         return cell
     }
 }

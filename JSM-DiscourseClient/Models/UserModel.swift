@@ -11,51 +11,42 @@
 
 import Foundation
 
-// MARK: - User
-struct user: Codable {
-    var directoryItems: [DirectoryItem]?
-    var totalRowsDirectoryItems: Int?
-    var loadMoreDirectoryItems: String?
+
+// MARK: - UserModel
+struct UserModel: Codable {
+    var directoryItems: [DirectoryItem]
+    
 
     enum CodingKeys: String, CodingKey {
-        case directoryItems
-        case totalRowsDirectoryItems
-        case loadMoreDirectoryItems
+        case directoryItems = "directory_items"
+        
     }
 }
 
 // MARK: - DirectoryItem
 struct DirectoryItem: Codable {
-    var id, timeRead, likesReceived, likesGiven: Int?
-    var topicsEntered, topicCount, postCount, postsRead: Int?
-    var daysVisited: Int?
-    var user: UserClass?
+    var id: Int
+    var user: User
 
     enum CodingKeys: String, CodingKey {
-        case id
-        case timeRead
-        case likesReceived
-        case likesGiven
-        case topicsEntered
-        case topicCount
-        case postCount
-        case postsRead
-        case daysVisited
-        case user
+        case id  = "id"
+        case user = "user"
     }
 }
 
-// MARK: - UserClass
-struct UserClass: Codable {
-    var id: Int?
-    var username: String?
+// MARK: - User
+struct User: Codable {
+    var id: Int
+    var username: String
     var name: String?
-    var avatarTemplate: String?
+    var avatarTemplate: String
     var title: String?
 
     enum CodingKeys: String, CodingKey {
         case id, username, name
-        case avatarTemplate
+        case avatarTemplate = "avatar_template"
         case title
     }
 }
+//·······················································
+

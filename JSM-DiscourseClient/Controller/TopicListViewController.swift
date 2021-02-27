@@ -12,8 +12,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var latestTopic: Topic?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.reloadData()
         tableView.register(UINib(nibName: "topicsCell", bundle: nil), forCellReuseIdentifier: "topicsCell")
         tableView.dataSource =  self
         
@@ -30,6 +32,7 @@ class ViewController: UIViewController {
     }
 
     
+   
     
     private func fetchTopic(completion: @escaping(Result<Topic, Error>) -> Void){
         guard let url: URL = URL(string: Constants.urlLatestTopic) else {return}
@@ -78,7 +81,7 @@ class ViewController: UIViewController {
             let destination = segue.destination as? TopicDetailViewController
             
             let indexPathSelected = tableView.indexPathForSelectedRow!
-            guard  let selectedTopic = latestTopic?.topicList?.topics?[indexPathSelected.row] as? Topic? else {return}
+            guard  let selectedTopic = latestTopic?.topicList?.topics?[indexPathSelected.row] as? TopicElement? else {return}
             destination?.detailTopic = selectedTopic
         }
         
@@ -101,7 +104,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        performSegue(withIdentifier: "DIRECTO_TO_DETAIL", sender: nil)
+
         if(indexPath.row < latestTopic?.topicList?.topics?.count ?? 1 ){
             performSegue(withIdentifier: "DIRECTO_TO_DETAIL", sender: latestTopic?.topicList?.topics?[indexPath.row])
         }

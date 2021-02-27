@@ -8,19 +8,21 @@
 import UIKit
 
 class TopicDetailViewController: UIViewController{
-    
+    var detailTopic: TopicElement?
     @IBOutlet weak var topicLabel: UILabel!
-    var detailTopic: Topic?
+    
+    @IBOutlet weak var topicID: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = detailTopic?.topicList?.topics?.description
-        topicLabel.text = detailTopic?.topicList?.topics?.description
-        
+        let muestraID = String ((detailTopic?.id)!)
+        title = String("TopicId: \(muestraID)")
+        topicLabel.text = detailTopic?.title
+        topicID.text =  String((detailTopic?.id)!) 
+            
     }
     
-    @IBAction func backButtonTapped(_ sender: Any) {
-        //cerrando ventana modal
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
-    }   
+     
+
+    
 }
