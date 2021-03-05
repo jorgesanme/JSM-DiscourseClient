@@ -22,11 +22,14 @@
 		FD4C297B25B8593D0045CE50 /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C297925B8593D0045CE50 /* PostsCell.swift */; };
 		FD4C297C25B8593D0045CE50 /* PostsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD4C297A25B8593D0045CE50 /* PostsCell.xib */; };
 		FD4D8B2A25EAC0E700B9F7DB /* NewTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4D8B2925EAC0E700B9F7DB /* NewTopic.swift */; };
+		FD4DEAC425ED1CF7001F491C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4DEAC225ED1CF7001F491C /* UserCell.swift */; };
+		FD4DEAC525ED1CF7001F491C /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD4DEAC325ED1CF7001F491C /* UserCell.xib */; };
 		FDB2874C25B85EBF0053C000 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB2874B25B85EBF0053C000 /* UserModel.swift */; };
 		FDC7AFE125B6DE4600A7E23B /* LatestTopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7AFE025B6DE4600A7E23B /* LatestTopicModel.swift */; };
 		FDC7AFE425B6DFE400A7E23B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7AFE325B6DFE400A7E23B /* Constants.swift */; };
 		FDC7AFE825B6F32300A7E23B /* topicsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7AFE625B6F32300A7E23B /* topicsCell.swift */; };
 		FDC7AFE925B6F32300A7E23B /* topicsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDC7AFE725B6F32300A7E23B /* topicsCell.xib */; };
+		FDF227E525F2306900F46774 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF227E425F2306900F46774 /* UserDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,11 +50,14 @@
 		FD4C297925B8593D0045CE50 /* PostsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCell.swift; sourceTree = "<group>"; };
 		FD4C297A25B8593D0045CE50 /* PostsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsCell.xib; sourceTree = "<group>"; };
 		FD4D8B2925EAC0E700B9F7DB /* NewTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopic.swift; sourceTree = "<group>"; };
+		FD4DEAC225ED1CF7001F491C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		FD4DEAC325ED1CF7001F491C /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		FDB2874B25B85EBF0053C000 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		FDC7AFE025B6DE4600A7E23B /* LatestTopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestTopicModel.swift; sourceTree = "<group>"; };
 		FDC7AFE325B6DFE400A7E23B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FDC7AFE625B6F32300A7E23B /* topicsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topicsCell.swift; sourceTree = "<group>"; };
 		FDC7AFE725B6F32300A7E23B /* topicsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = topicsCell.xib; sourceTree = "<group>"; };
+		FDF227E425F2306900F46774 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,7 @@
 				FD4A05D825B7622700A61045 /* UsersListViewController.swift */,
 				FD4A05DB25B7642400A61045 /* TopicDetailViewController.swift */,
 				FD4C297025B835AF0045CE50 /* AddTopicViewController.swift */,
+				FDF227E425F2306900F46774 /* UserDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -137,6 +144,8 @@
 				FDC7AFE725B6F32300A7E23B /* topicsCell.xib */,
 				FD4C297925B8593D0045CE50 /* PostsCell.swift */,
 				FD4C297A25B8593D0045CE50 /* PostsCell.xib */,
+				FD4DEAC225ED1CF7001F491C /* UserCell.swift */,
+				FD4DEAC325ED1CF7001F491C /* UserCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +209,7 @@
 			files = (
 				FD4B6FA725B1B09B005D6760 /* LaunchScreen.storyboard in Resources */,
 				FDC7AFE925B6F32300A7E23B /* topicsCell.xib in Resources */,
+				FD4DEAC525ED1CF7001F491C /* UserCell.xib in Resources */,
 				FD4B6FA425B1B09B005D6760 /* Assets.xcassets in Resources */,
 				FD4B6FA225B1B097005D6760 /* Main.storyboard in Resources */,
 				FD4C297C25B8593D0045CE50 /* PostsCell.xib in Resources */,
@@ -213,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDF227E525F2306900F46774 /* UserDetailViewController.swift in Sources */,
 				FDC7AFE425B6DFE400A7E23B /* Constants.swift in Sources */,
 				FD4B6F9F25B1B097005D6760 /* TopicListViewController.swift in Sources */,
 				FD4B6F9B25B1B097005D6760 /* AppDelegate.swift in Sources */,
@@ -221,6 +232,7 @@
 				FD4C297425B851B70045CE50 /* LatestPostModel.swift in Sources */,
 				FDC7AFE125B6DE4600A7E23B /* LatestTopicModel.swift in Sources */,
 				FD4B6F9D25B1B097005D6760 /* SceneDelegate.swift in Sources */,
+				FD4DEAC425ED1CF7001F491C /* UserCell.swift in Sources */,
 				FD4A05D925B7622700A61045 /* UsersListViewController.swift in Sources */,
 				FD4C297125B835AF0045CE50 /* AddTopicViewController.swift in Sources */,
 				FD4A05D325B742BA00A61045 /* CategoriesListViewController.swift in Sources */,

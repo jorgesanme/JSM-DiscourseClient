@@ -12,11 +12,12 @@ class UsersListViewController: UIViewController{
     @IBOutlet weak var tableViewUser: UITableView!
     
     
-    var userList: UserModel? = nil
+    var userList: UserModel?
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViewUser.register(UINib(nibName: "topicsCell", bundle: nil), forCellReuseIdentifier: "topicsCell")
+        tableViewUser.register(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: "UserCell")
         tableViewUser.dataSource = self
+        tableViewUser.delegate = self
         
         fetchUser { [weak self] result in
             switch result {
@@ -25,7 +26,6 @@ class UsersListViewController: UIViewController{
                     self?.userList = userDecoded
                     self?.tableViewUser.reloadData()
                     
-                    print(self?.userList?.directoryItems[0].user.name)
                 case.failure(let error):
                     print(error)
             }
@@ -76,7 +76,16 @@ class UsersListViewController: UIViewController{
         
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let segueIdentifier = segue.identifier,
+           segueIdentifier == "SEGUE_TO_USERDETAIL"{
+            let destination = segue.destination as? UserDetailViewController
+            
+            let indexPathSelected = tableViewUser.indexPathForSelectedRow!
+            guard  let selectedUser = userList?.directoryItems[indexPathSelected.row]  as? DirectoryItem? else {return}
+            destination?.detailUser = selectedUser
+        }
+    }
 }
 
 extension UsersListViewController: UITableViewDataSource, UITableViewDelegate{
@@ -87,13 +96,18 @@ extension UsersListViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell =  tableView.dequeueReusableCell(withIdentifier: "topicsCell", for: indexPath)
+        let cell =  tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as? UserCell
+        let imageurl = userList?.directoryItems[indexPath.row].user.avatarTemplate
+        cell?.userImage.image = UIImage(named: "https://mdiscourse.keepcoding.io\(String(describing: imageurl)) " )
+        cell?.nameLabel.text = userList?.directoryItems[indexPath.row].user.name
         
-        cell.textLabel?.text =  userList?.directoryItems[indexPath.row].user.name
-            
-        return cell
+        return cell ?? UITableViewCell()
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row <  userList?.directoryItems.count ?? 1){
+            performSegue(withIdentifier: "SEGUE_TO_USERDETAIL", sender: userList?.directoryItems[indexPath.row])
+        }
+    }
 }
-//navigationController?.popViewController(animated: true)
+

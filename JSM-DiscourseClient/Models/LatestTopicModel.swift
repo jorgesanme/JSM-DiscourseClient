@@ -28,11 +28,15 @@ struct TopicElement: Codable {
     let id: Int?
     let title: String?
     let createdAt: String?
+    let canDelete: Bool?
+    var postNumber: Int
     
 
     enum CodingKeys: String, CodingKey {
         case id, title
         case createdAt = "created_at"
+        case canDelete = "can_delete"
+        case postNumber = "posts_count"
     }
 }
 

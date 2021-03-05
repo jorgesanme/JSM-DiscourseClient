@@ -7,9 +7,10 @@
 
 import UIKit
 
-class AddTopicViewController: UIViewController{    
+class AddTopicViewController: UIViewController{
+    var topicUpdate: TopicListViewController =  TopicListViewController()
     @IBOutlet weak var textField: UITextField!
-   
+    @IBOutlet weak var contentTopic: UITextField!
     
     
     override func viewDidLoad() {
@@ -20,13 +21,14 @@ class AddTopicViewController: UIViewController{
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        //guard let topicTitle = textField?.text else {return}
+//        topicUpdate.lastTopicUpdate()
     }
     
     
     private func addTopic(completion: @escaping(Result<Topic, Error>) -> Void){
         guard let url: URL = URL(string: Constants.urlPosts) else {return}
-        let otrotitle =  textField.text
+        guard let title =  textField.text else {return}
+        guard let content =  contentTopic.text else {return}
         let configuration = URLSessionConfiguration.default
         let session: URLSession = URLSession(configuration: configuration)
         var addTopicRequest: URLRequest = .init(url: url)
@@ -35,8 +37,8 @@ class AddTopicViewController: UIViewController{
         addTopicRequest.setValue(Constants.userName, forHTTPHeaderField: "Api-Username")
         addTopicRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let jsonData = try? JSONSerialization.data(withJSONObject: ["title": otrotitle,
-                                                                    "raw": otrotitle,
+        let jsonData = try? JSONSerialization.data(withJSONObject: ["title": title,
+                                                                    "raw": content,
                                                                     "create_at": ""])
         addTopicRequest.httpBody = jsonData
         

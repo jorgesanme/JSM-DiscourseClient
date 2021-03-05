@@ -1,13 +1,13 @@
 //
-//  topicsCell.swift
+//  UserCellTableViewCell.swift
 //  JSM-DiscourseClient
 //
-//  Created by Jorge Sanchez on 19/01/2021.
+//  Created by Jorge Sanchez on 01/03/2021.
 //
 
 import UIKit
 
-class topicsCell: UITableViewCell {
+class UserCellTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,12 +18,6 @@ class topicsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-        // prepareForSeguel
-        
     }
-//    @IBSegueAction func SEGUE_FROM_TOPIC_TO_DETAIL(_ coder: NSCoder) -> UIViewController? {
-//        return UIViewController(coder: coder)
-//    }
     
 }
-

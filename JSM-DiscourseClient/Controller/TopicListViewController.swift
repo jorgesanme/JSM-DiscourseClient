@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TopicListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.reloadData()
+        
         tableView.register(UINib(nibName: "topicsCell", bundle: nil), forCellReuseIdentifier: "topicsCell")
         tableView.dataSource =  self
         
@@ -31,8 +31,11 @@ class ViewController: UIViewController {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+    }
     
-   
     
     private func fetchTopic(completion: @escaping(Result<Topic, Error>) -> Void){
         guard let url: URL = URL(string: Constants.urlLatestTopic) else {return}
@@ -90,7 +93,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate{
+extension TopicListViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return latestTopic?.topicList?.topics?.count ?? 1
@@ -115,9 +118,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
 
-  //navigationController?.popViewController(animated: true)
-    
-//performSegue(withIdentifier: "SEGUE_TO_DETAIL", sender: "")
+  
     
 
 
