@@ -26,17 +26,10 @@ class TopicListViewController: UIViewController {
                     self?.tableView.reloadData()
                 case.failure(let error):
                     print(error)
-            }
-            
+            }            
         }
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tableView.reloadData()
-    }
-    
-    
+   
     private func fetchTopic(completion: @escaping(Result<Topic, Error>) -> Void){
         guard let url: URL = URL(string: Constants.urlLatestTopic) else {return}
         let session: URLSession = URLSession(configuration: .default)
@@ -82,15 +75,16 @@ class TopicListViewController: UIViewController {
         if let segueIdentifier = segue.identifier,
            segueIdentifier == "DIRECTO_TO_DETAIL"{
             let destination = segue.destination as? TopicDetailViewController
-            
             let indexPathSelected = tableView.indexPathForSelectedRow!
             guard  let selectedTopic = latestTopic?.topicList?.topics?[indexPathSelected.row] as? TopicElement? else {return}
             destination?.detailTopic = selectedTopic
         }
-        
+        if let segueIdentifierADD = segue.identifier,  segueIdentifierADD == "ADD_TOPIC"{
+            let destination = segue.destination as! AddTopicViewController
+            destination.topicUpdateDelegate = self
+        }
         
     }
-    
 }
 
 extension TopicListViewController: UITableViewDataSource, UITableViewDelegate{
@@ -105,18 +99,31 @@ extension TopicListViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
         
-
         if(indexPath.row < latestTopic?.topicList?.topics?.count ?? 1 ){
             performSegue(withIdentifier: "DIRECTO_TO_DETAIL", sender: latestTopic?.topicList?.topics?[indexPath.row])
         }
         
+    }
+    
+}
+
+extension TopicListViewController: AddTopicDelegate{
+    func updateTopic() {
+        
+        fetchTopic {[weak self] result in
+            switch result {
+                case.success(let topic):
+                    self?.latestTopic = topic
+                    self?.tableView.reloadData()
+                case.failure(let error):
+                    print(error)
+            }
+        }
         
     }
-    
-    }
-    
+}
 
   
     

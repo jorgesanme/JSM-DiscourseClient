@@ -17,6 +17,7 @@
 		FD4B6FA225B1B097005D6760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4B6FA025B1B097005D6760 /* Main.storyboard */; };
 		FD4B6FA425B1B09B005D6760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD4B6FA325B1B09B005D6760 /* Assets.xcassets */; };
 		FD4B6FA725B1B09B005D6760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4B6FA525B1B09B005D6760 /* LaunchScreen.storyboard */; };
+		FD4BBC8F25F3EE56003C4939 /* AddTopicDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4BBC8E25F3EE56003C4939 /* AddTopicDelegate.swift */; };
 		FD4C297125B835AF0045CE50 /* AddTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C297025B835AF0045CE50 /* AddTopicViewController.swift */; };
 		FD4C297425B851B70045CE50 /* LatestPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C297325B851B70045CE50 /* LatestPostModel.swift */; };
 		FD4C297B25B8593D0045CE50 /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4C297925B8593D0045CE50 /* PostsCell.swift */; };
@@ -30,6 +31,7 @@
 		FDC7AFE825B6F32300A7E23B /* topicsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7AFE625B6F32300A7E23B /* topicsCell.swift */; };
 		FDC7AFE925B6F32300A7E23B /* topicsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDC7AFE725B6F32300A7E23B /* topicsCell.xib */; };
 		FDF227E525F2306900F46774 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF227E425F2306900F46774 /* UserDetailViewController.swift */; };
+		FDF227EC25F257CE00F46774 /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF227EB25F257CE00F46774 /* ShowAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,7 @@
 		FD4B6FA325B1B09B005D6760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD4B6FA625B1B09B005D6760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD4B6FA825B1B09B005D6760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD4BBC8E25F3EE56003C4939 /* AddTopicDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTopicDelegate.swift; sourceTree = "<group>"; };
 		FD4C297025B835AF0045CE50 /* AddTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTopicViewController.swift; sourceTree = "<group>"; };
 		FD4C297325B851B70045CE50 /* LatestPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestPostModel.swift; sourceTree = "<group>"; };
 		FD4C297925B8593D0045CE50 /* PostsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCell.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		FDC7AFE625B6F32300A7E23B /* topicsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topicsCell.swift; sourceTree = "<group>"; };
 		FDC7AFE725B6F32300A7E23B /* topicsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = topicsCell.xib; sourceTree = "<group>"; };
 		FDF227E425F2306900F46774 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		FDF227EB25F257CE00F46774 /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 				FD4A05DB25B7642400A61045 /* TopicDetailViewController.swift */,
 				FD4C297025B835AF0045CE50 /* AddTopicViewController.swift */,
 				FDF227E425F2306900F46774 /* UserDetailViewController.swift */,
+				FDF227EB25F257CE00F46774 /* ShowAlert.swift */,
+				FD4BBC8E25F3EE56003C4939 /* AddTopicDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -229,6 +235,7 @@
 				FD4B6F9B25B1B097005D6760 /* AppDelegate.swift in Sources */,
 				FD4A05DC25B7642400A61045 /* TopicDetailViewController.swift in Sources */,
 				FD4C297B25B8593D0045CE50 /* PostsCell.swift in Sources */,
+				FD4BBC8F25F3EE56003C4939 /* AddTopicDelegate.swift in Sources */,
 				FD4C297425B851B70045CE50 /* LatestPostModel.swift in Sources */,
 				FDC7AFE125B6DE4600A7E23B /* LatestTopicModel.swift in Sources */,
 				FD4B6F9D25B1B097005D6760 /* SceneDelegate.swift in Sources */,
@@ -236,6 +243,7 @@
 				FD4A05D925B7622700A61045 /* UsersListViewController.swift in Sources */,
 				FD4C297125B835AF0045CE50 /* AddTopicViewController.swift in Sources */,
 				FD4A05D325B742BA00A61045 /* CategoriesListViewController.swift in Sources */,
+				FDF227EC25F257CE00F46774 /* ShowAlert.swift in Sources */,
 				FDC7AFE825B6F32300A7E23B /* topicsCell.swift in Sources */,
 				FD4D8B2A25EAC0E700B9F7DB /* NewTopic.swift in Sources */,
 				FDB2874C25B85EBF0053C000 /* UserModel.swift in Sources */,

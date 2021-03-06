@@ -183,38 +183,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3D426DDA-566B-4464-858E-629314E780A5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JSM-DiscourseClient/Controller/UsersListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BA7A0F50-047F-4C94-8574-6B1650BFA53C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JSM-DiscourseClient/Controller/TopicListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "851B73F3-0441-47ED-9F50-86396E74ED70"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -222,10 +190,10 @@
             filePath = "JSM-DiscourseClient/Controller/TopicListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "TopicListViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -244,11 +212,11 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "A592A39C-9B88-46D8-9FE6-6C02BA43C33D - b7d9fc16e7cb4215"
+                  uuid = "A592A39C-9B88-46D8-9FE6-6C02BA43C33D - e5b691a8faf6ce33"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "JSM_DiscourseClient.UserDetailViewController.detailUser.getter : Swift.Optional&lt;JSM_DiscourseClient.User&gt;"
+                  symbolName = "JSM_DiscourseClient.UserDetailViewController.detailUser.getter : Swift.Optional&lt;JSM_DiscourseClient.DirectoryItem&gt;"
                   moduleName = "JSM-DiscourseClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jorgesanchez/Documents/BootCamp%20mo%CC%81bile/Concurrencia%20y%20Red/JSM-DiscourseClient/JSM-DiscourseClient/Controller/UserDetailViewController.swift"
@@ -256,14 +224,14 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "11"
                   endingLineNumber = "11"
-                  offsetFromSymbolStart = "254">
+                  offsetFromSymbolStart = "279">
                </Location>
                <Location
-                  uuid = "A592A39C-9B88-46D8-9FE6-6C02BA43C33D - 3b2c5c0789a96619"
+                  uuid = "A592A39C-9B88-46D8-9FE6-6C02BA43C33D - bb499ebcef880e27"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "JSM_DiscourseClient.UserDetailViewController.detailUser.setter : Swift.Optional&lt;JSM_DiscourseClient.User&gt;"
+                  symbolName = "JSM_DiscourseClient.UserDetailViewController.detailUser.setter : Swift.Optional&lt;JSM_DiscourseClient.DirectoryItem&gt;"
                   moduleName = "JSM-DiscourseClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jorgesanchez/Documents/BootCamp%20mo%CC%81bile/Concurrencia%20y%20Red/JSM-DiscourseClient/JSM-DiscourseClient/Controller/UserDetailViewController.swift"
@@ -271,14 +239,14 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "11"
                   endingLineNumber = "11"
-                  offsetFromSymbolStart = "372">
+                  offsetFromSymbolStart = "403">
                </Location>
                <Location
-                  uuid = "A592A39C-9B88-46D8-9FE6-6C02BA43C33D - 65c028b37f8fd883"
+                  uuid = "A592A39C-9B88-46D8-9FE6-6C02BA43C33D - 14a912716b3c4d9d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "JSM_DiscourseClient.UserDetailViewController.detailUser.modify : Swift.Optional&lt;JSM_DiscourseClient.User&gt;"
+                  symbolName = "JSM_DiscourseClient.UserDetailViewController.detailUser.modify : Swift.Optional&lt;JSM_DiscourseClient.DirectoryItem&gt;"
                   moduleName = "JSM-DiscourseClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jorgesanchez/Documents/BootCamp%20mo%CC%81bile/Concurrencia%20y%20Red/JSM-DiscourseClient/JSM-DiscourseClient/Controller/UserDetailViewController.swift"
@@ -289,11 +257,11 @@
                   offsetFromSymbolStart = "18">
                </Location>
                <Location
-                  uuid = "A592A39C-9B88-46D8-9FE6-6C02BA43C33D - 6f0aa5d666857e9f"
+                  uuid = "A592A39C-9B88-46D8-9FE6-6C02BA43C33D - a0db7ce85746ba40"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "JSM_DiscourseClient.UserDetailViewController.detailUser.modify : Swift.Optional&lt;JSM_DiscourseClient.User&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  symbolName = "JSM_DiscourseClient.UserDetailViewController.detailUser.modify : Swift.Optional&lt;JSM_DiscourseClient.DirectoryItem&gt; with unmangled suffix &quot;.resume.0&quot;"
                   moduleName = "JSM-DiscourseClient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jorgesanchez/Documents/BootCamp%20mo%CC%81bile/Concurrencia%20y%20Red/JSM-DiscourseClient/JSM-DiscourseClient/Controller/UserDetailViewController.swift"
@@ -355,31 +323,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ED0347FE-8F0D-42C5-B7C6-F39949494C1F"
+            uuid = "99AD03F2-E384-457C-B336-7DC070B5126E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JSM-DiscourseClient/Controller/UsersListViewController.swift"
+            filePath = "JSM-DiscourseClient/Controller/TopicListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D6D95E78-85AE-4198-8781-11EB70BE311E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JSM-DiscourseClient/Controller/UsersListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -387,48 +339,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E4FB0B33-C29A-4FCF-ACE3-104F61F2AC33"
+            uuid = "6E59FBB2-4318-4727-8A58-D041E8A9152F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JSM-DiscourseClient/Controller/UsersListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "fetchImage(url:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AA694D61-A2D7-474D-A6C3-88A4DE6F3F29"
+            uuid = "5B8D928D-5B3D-4B5D-8789-1DF92EEC1C2B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JSM-DiscourseClient/Controller/UsersListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B04E00A9-CEAD-4266-B3D6-FC0A93CA84B2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JSM-DiscourseClient/Controller/UsersListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "fetchImage(url:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

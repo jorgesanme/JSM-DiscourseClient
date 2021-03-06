@@ -47,7 +47,7 @@
                     <navigationItem key="navigationItem" title="Topic List" id="O8t-Qv-0ei">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Q4o-q5-v0S">
                             <connections>
-                                <segue destination="p2R-xW-sSI" kind="presentation" id="4d2-ea-xvd"/>
+                                <segue destination="p2R-xW-sSI" kind="presentation" identifier="ADD_TOPIC" id="4d2-ea-xvd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -519,7 +519,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cdH-WZ-Upq"/>
+        <segue reference="WMk-eD-0hq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="barButtonItem:4Hk-6b-y3X:image" width="128" height="106">

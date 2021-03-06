@@ -8,7 +8,9 @@
 import UIKit
 
 class AddTopicViewController: UIViewController{
-    var topicUpdate: TopicListViewController =  TopicListViewController()
+    
+    var topicUpdateDelegate: AddTopicDelegate?
+    
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var contentTopic: UITextField!
     
@@ -17,11 +19,13 @@ class AddTopicViewController: UIViewController{
         super.viewDidLoad()
         
         
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        topicUpdate.lastTopicUpdate()
+        topicUpdateDelegate?.updateTopic()
+        
     }
     
     
@@ -79,21 +83,28 @@ class AddTopicViewController: UIViewController{
         }
     
     @IBAction func addTopicButtonTapped(_ sender: Any) {
-        //TODO aqui se debe llamar a la funcion que sube el topic y luego se refresca la lista y se cierra la  ventana modal
+        //TODO aqui se debe llamar a la funcion que sube el topic y se cierra la  ventana modal
         addTopic {[weak self] result in
             guard let self =  self else {return}
             switch result{
                 case.success(_):
-                    //cerrando ventana modal
-                    self.presentingViewController?.dismiss(animated: true, completion: nil)
+                    // lanza alerta de exito
+                    //cerrando ventana modal al pulsar el botón  de la alerta
+                    self.showAlert("Topic añadido correctamente", "3 puntos colega", "volvemos", handler: ((UIAlertAction) -> Void)?{_ in 
+                                    self.presentingViewController?.dismiss(animated: true, completion: nil)})
                     
                 case.failure(let error):
-                    print(error)
+                    // lanza alerta de error
+                    // cerrando ventana modal al pulsar el botón  de la alerta
+                    self.showAlert(String(error.localizedDescription), "Cascotazo", "Saliendo?", handler: ((UIAlertAction) -> Void)?{_ in
+                                    self.presentingViewController?.dismiss(animated: true, completion: nil)})
+                    
             }
         }
         
         
     }
+    
     
     
 }
