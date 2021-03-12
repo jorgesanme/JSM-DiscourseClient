@@ -15,6 +15,7 @@ class UserCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        prepareForReuse()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

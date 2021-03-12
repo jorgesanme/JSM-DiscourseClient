@@ -11,8 +11,8 @@ class UsersListViewController: UIViewController{
     
     @IBOutlet weak var tableViewUser: UITableView!
     
-    
     var userList: UserModel?
+    var userImage: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewUser.register(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: "UserCell")
@@ -35,22 +35,22 @@ class UsersListViewController: UIViewController{
     }
     
     private func fetchImage(url: String) -> UIImage?{
-        let otraURL =  Constants.userImage + url
-//        let otraURL =  "https://mdiscourse.keepcoding.io\(url)"
+        let imageURL =  Constants.userImage + url
+        //        let otraURL =  "https://mdiscourse.keepcoding.io\(url)"
         //se limpia a url para que {size} tenga un tamaño de xx
-        let cleanUrl = otraURL.replacingOccurrences(of: "{size}", with: "40")
+        let cleanUrl = imageURL.replacingOccurrences(of: "{size}", with: "50")
+        
         guard let imageUrl: URL = URL(string: cleanUrl) else {return nil}
-          
         
-        if let imageData = try? Data(contentsOf: imageUrl) {
-            if let image = UIImage(data: imageData) {
-                return image
-
+        DispatchQueue.global(qos: .userInitiated).async {
+            [weak self] in
+            if let imageUrl: URL = URL(string: cleanUrl),
+               let imageData = try? Data(contentsOf: imageUrl){             DispatchQueue.main.async {
+                    self?.userImage = UIImage(data: imageData)
+                }
             }
-
         }
-        return  nil
-        
+        return userImage
     }
     
     private func fetchUser(completion: @escaping (Result<UserModel,Error>) -> Void){
@@ -117,6 +117,7 @@ extension UsersListViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as? UserCell
         let imageurl = userList?.directoryItems[indexPath.row].user.avatarTemplate
+        
         
         if let image = fetchImage(url: imageurl ?? "") {
             cell?.userImage.image = image
