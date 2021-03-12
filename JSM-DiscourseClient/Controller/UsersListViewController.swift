@@ -29,9 +29,7 @@ class UsersListViewController: UIViewController{
                 case.failure(let error):
                     print(error)
             }
-            
         }
-        
     }
     
     private func fetchImage(url: String) -> UIImage?{
@@ -45,7 +43,8 @@ class UsersListViewController: UIViewController{
         DispatchQueue.global(qos: .userInitiated).async {
             [weak self] in
             if let imageUrl: URL = URL(string: cleanUrl),
-               let imageData = try? Data(contentsOf: imageUrl){             DispatchQueue.main.async {
+               let imageData = try? Data(contentsOf: imageUrl){
+                DispatchQueue.main.async {
                     self?.userImage = UIImage(data: imageData)
                 }
             }
@@ -92,7 +91,6 @@ class UsersListViewController: UIViewController{
             }
         }
         dataTask.resume()
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -109,15 +107,12 @@ class UsersListViewController: UIViewController{
 
 extension UsersListViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return userList?.directoryItems.count ?? 1
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as? UserCell
         let imageurl = userList?.directoryItems[indexPath.row].user.avatarTemplate
-        
         
         if let image = fetchImage(url: imageurl ?? "") {
             cell?.userImage.image = image
